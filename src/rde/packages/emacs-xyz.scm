@@ -76,7 +76,6 @@
      (sha256
       (base32 "052c7xivwd2grxwpspjnfj3hzla2lgc3r8yq24i5jbyasdnpghbc"))))
    (build-system emacs-build-system)
-   (inputs (list emacs-dash emacs-s))
    (synopsis "Really simple but standalone json flymake utilizing the
 builtin json parser")
    (description
