@@ -19,6 +19,7 @@
 
 (define-module (contrib packages node)
   #:use-module (rde packages)
+  #:use-module (gnu packages)
   #:use-module (gnu packages adns)
   #:use-module (gnu packages base)
   #:use-module (gnu packages bash)
@@ -44,6 +45,7 @@
   #:use-module (guix packages)
   #:use-module (guix utils))
 
+
 (define-public llhttp-bootstrap-2.1.4
   (package
     (name "llhttp")
@@ -57,7 +59,13 @@
               (sha256
                (base32
                 "115mwyds9655p76lhglxg2blc1ksgrix6zhigaxnc2q6syy3pa6x"))
-              (patches (search-patches "llhttp-bootstrap-CVE-2020-8287.patch"))
+              (patches
+               (parameterize
+                   ((%patch-path
+                     (map (lambda (directory)
+                            (string-append directory "/contrib/packages/patches"))
+                          %load-path)))
+                 (search-patches "llhttp-bootstrap-CVE-2020-8287.patch")))
               (modules '((guix build utils)))
               (snippet
                '(begin
