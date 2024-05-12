@@ -20,7 +20,7 @@
 ;;; along with rde.  If not, see <http://www.gnu.org/licenses/>.
 
 (define-module (contrib packages node-xyz)
-  #:use-module (rde packages node)
+  #:use-module (contrib packages node)
   #:use-module (gnu packages base)
   #:use-module (gnu packages node)
   #:use-module (gnu packages node-xyz)

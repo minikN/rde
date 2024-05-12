@@ -17,7 +17,7 @@
 ;;; You should have received a copy of the GNU General Public License
 ;;; along with rde.  If not, see <http://www.gnu.org/licenses/>.
 
-(define-module (rde packages node)
+(define-module (contrib packages node)
   #:use-module (rde packages)
   #:use-module (gnu packages adns)
   #:use-module (gnu packages base)
